@@ -5,3 +5,8 @@ node_modules/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+.env.local
+.env.*.local
+
+# Generated frontend router temp files
+frontend/.tanstack/

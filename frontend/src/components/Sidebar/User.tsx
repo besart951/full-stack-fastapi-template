@@ -16,11 +16,12 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar"
+import type { UserPublic } from "@/client"
 import useAuth from "@/hooks/useAuth"
 import { getInitials } from "@/utils"
 
 interface UserInfoProps {
-  fullName?: string
+  fullName?: string | null
   email?: string
 }
 
@@ -40,7 +41,11 @@ function UserInfo({ fullName, email }: UserInfoProps) {
   )
 }
 
-export function User({ user }: { user: any }) {
+type SidebarUserProps = {
+  user: UserPublic | null | undefined
+}
+
+export function User({ user }: SidebarUserProps) {
   const { logout } = useAuth()
   const { isMobile, setOpenMobile } = useSidebar()
 
